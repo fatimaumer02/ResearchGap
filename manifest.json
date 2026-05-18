@@ -1,0 +1,58 @@
+{
+  "manifest_version": 3,
+  "name": "Research Gap Analyzer",
+  "version": "1.2.0",
+  "description": "AI-powered tool to analyze research papers and detect research gaps.",
+
+  "icons": {
+
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+     
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png"
+    }
+  },
+
+  "background": {
+    "service_worker": "background/serviceWorker.js"
+  },
+
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "sidePanel",
+    "storage"
+  ],
+
+  "host_permissions": [
+    "https://arxiv.org/*",
+    "https://ar5iv.labs.arxiv.org/*",
+    "https://www.biorxiv.org/*",
+    "https://www.medrxiv.org/*",
+    "https://papers.ssrn.com/*",
+    "https://api.groq.com/*"
+  ],
+
+  "side_panel": {
+    "default_path": "sidebar/sidebar.html"
+  },
+
+  "content_scripts": [
+    {
+      "matches": [
+        "https://arxiv.org/*",
+        "https://ar5iv.labs.arxiv.org/html/*"
+      ],
+      "js": [
+        "content/extractor.js"
+      ]
+    }
+  ]
+}

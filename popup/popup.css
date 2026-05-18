@@ -1,0 +1,17 @@
+body {
+    width: 300px;
+    font-family: Arial, sans-serif;
+    padding: 10px;
+}
+
+button {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+#result {
+    white-space: pre-wrap;
+    font-size: 12px;
+}

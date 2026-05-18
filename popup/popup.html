@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Research Gap Analyzer</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'IBM Plex Sans', Arial, sans-serif;
+      width: 280px;
+      background: #f4f6f9;
+      color: #1a1d23;
+    }
+
+    .header {
+      background: #ffffff;
+      border-bottom: 1px solid #e1e5ec;
+      padding: 12px 14px;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .header-icon { font-size: 18px; line-height: 1; }
+
+    .header-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: #1a1d23;
+      letter-spacing: -0.01em;
+    }
+
+    .header-sub {
+      font-size: 10px;
+      font-family: 'IBM Plex Mono', monospace;
+      color: #8a90a0;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      margin-top: 1px;
+    }
+
+    .body { padding: 14px 12px; }
+
+    #analyzeBtn {
+      width: 100%;
+      padding: 10px;
+      background: #2563eb;
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+      font-family: 'IBM Plex Sans', Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      transition: background 0.15s;
+    }
+
+    #analyzeBtn:hover { background: #1d4ed8; }
+    #analyzeBtn:disabled { background: #93c5fd; cursor: not-allowed; }
+
+    .hint {
+      font-size: 11px;
+      color: #8a90a0;
+      text-align: center;
+      margin-top: 10px;
+      font-family: 'IBM Plex Mono', monospace;
+    }
+
+    #statusBox {
+      display: none;
+      margin-top: 12px;
+      background: #ffffff;
+      border: 1px solid #e1e5ec;
+      border-radius: 8px;
+      padding: 10px 12px;
+    }
+
+    .status-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      color: #4a5060;
+    }
+
+    .spinner {
+      width: 14px;
+      height: 14px;
+      border: 2px solid #e1e5ec;
+      border-top-color: #2563eb;
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+      flex-shrink: 0;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    #statusText { font-size: 12px; color: #4a5060; }
+    #statusIcon { font-size: 14px; display: none; }
+  </style>
+</head>
+
+<body>
+  <div class="header">
+    <div class="header-icon">🔬</div>
+    <div>
+      <div class="header-title">Research Gap Analyzer</div>
+      <div class="header-sub">AI Paper Analysis</div>
+    </div>
+  </div>
+
+  <div class="body">
+    <button id="analyzeBtn">🔍 Analyze Paper</button>
+    <p class="hint">Results open in side panel →</p>
+
+    <div id="statusBox">
+      <div class="status-row">
+        <div class="spinner" id="spinner"></div>
+        <span id="statusIcon"></span>
+        <span id="statusText">Starting...</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+
+</html>

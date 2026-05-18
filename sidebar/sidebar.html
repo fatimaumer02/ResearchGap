@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paper Analysis</title>
+  <link rel="stylesheet" href="sidebar.css">
+</head>
+
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-icon">🔬</div>
+    <div>
+      <div class="header-title">Paper Analysis</div>
+      <div class="header-sub">Research Gap Analyzer</div>
+    </div>
+  </div>
+
+  <!-- Placeholder -->
+  <div id="placeholder">
+    <span class="big">📄</span>
+    Click <strong>Analyze Paper</strong> in the popup<br>to see full results here.
+  </div>
+
+  <!-- Results -->
+  <div id="result">
+
+    <!-- Score Row -->
+    <div class="scores">
+      <div class="score-card">
+        <div class="score-val purple" id="totalScore">—</div>
+        <div class="score-label">Total Score</div>
+      </div>
+      <div class="score-card">
+        <div class="score-val green small" id="confidenceLevel">—</div>
+        <div class="score-label">Confidence</div>
+      </div>
+      <div class="score-card">
+        <div class="score-val amber" id="confidenceScore">—</div>
+        <div class="score-label">Conf. Score</div>
+      </div>
+    </div>
+
+    <!-- Methodology -->
+    <div class="card">
+      <div class="card-header">
+        <span class="card-icon">🧪</span>
+        <span class="card-title">Methodology Strength</span>
+      </div>
+      <div class="method-row">
+        <div class="method-bar-wrap">
+          <div class="method-bar" id="methodBar" style="width:0%"></div>
+        </div>
+        <div class="method-score" id="methodScore">—</div>
+      </div>
+      <div class="sub-text" id="methodWeakness"></div>
+    </div>
+
+    <!-- Reliability -->
+    <div class="card">
+      <div class="card-header">
+        <span class="card-icon">⚠️</span>
+        <span class="card-title">Reliability</span>
+        <span id="relBadge"></span>
+      </div>
+      <div class="sub-text" id="relReason"></div>
+    </div>
+
+    <!-- Literature -->
+    <div class="card">
+      <div class="card-header">
+        <span class="card-icon">📚</span>
+        <span class="card-title">Literature Integration</span>
+        <span id="litVal">—</span>
+      </div>
+    </div>
+
+    <!-- Recommendation -->
+    <div class="card" id="recCard">
+      <div class="card-header">
+        <span class="card-icon">🏁</span>
+        <span class="card-title">Recommendation</span>
+      </div>
+      <div class="rec-label" id="recLabel">—</div>
+      <div class="sub-text" id="recReason"></div>
+    </div>
+
+    <!-- Paper Summary -->
+    <div class="card">
+      <div class="card-header">
+        <span class="card-icon">📄</span>
+        <span class="card-title">Paper Summary</span>
+      </div>
+      <div class="summary-label">Overview</div>
+      <div class="summary-text" id="paperSummary"></div>
+    </div>
+
+    <!-- Key Contributions -->
+    <div class="card">
+      <div class="card-header">
+        <span class="card-icon">⭐</span>
+        <span class="card-title">Key Contributions</span>
+        <span class="card-badge badge-contrib" id="contribBadge"></span>
+      </div>
+      <div class="contrib-cards" id="contribList"></div>
+    </div>
+
+    <!-- Research Gaps -->
+    <div class="card">
+      <div class="card-header">
+        <span class="card-icon">🔍</span>
+        <span class="card-title">Research Gaps</span>
+        <span class="card-badge badge-gap" id="gapsBadge"></span>
+      </div>
+      <ul class="item-list" id="gapsList"></ul>
+    </div>
+
+    <!-- Limitations -->
+    <div class="card">
+      <div class="card-header">
+        <span class="card-icon">⚡</span>
+        <span class="card-title">Limitations</span>
+        <span class="card-badge badge-lim" id="limBadge"></span>
+      </div>
+      <ul class="item-list" id="limList"></ul>
+    </div>
+
+  </div>
+
+  <script src="sidebar.js"></script>
+</body>
+
+</html>

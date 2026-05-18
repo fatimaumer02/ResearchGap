@@ -1,0 +1,406 @@
+/* ── Google Fonts ── */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+/* ── Variables ── */
+:root {
+  --bg:          #f4f6f9;
+  --surface:     #ffffff;
+  --border:      #e1e5ec;
+  --border-dark: #c8cfd9;
+
+  --text:        #1a1d23;
+  --text-sub:    #4a5060;
+  --text-muted:  #8a90a0;
+
+  --accent:      #2563eb;
+  --green:       #16a34a;
+  --amber:       #d97706;
+  --red:         #dc2626;
+
+  --badge-gap-bg:    #eff6ff;
+  --badge-gap-text:  #1d4ed8;
+  --badge-lim-bg:    #fffbeb;
+  --badge-lim-text:  #92400e;
+
+  --radius:  10px;
+  --radius-sm: 6px;
+  --shadow:  0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04);
+}
+
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ── Base ── */
+html { font-size: 14px; }
+
+body {
+  font-family: 'IBM Plex Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+  min-height: 100vh;
+  padding-bottom: 24px;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border-dark); border-radius: 99px; }
+
+/* ══════════════════════════════
+   HEADER
+══════════════════════════════ */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: var(--shadow);
+}
+
+.header-icon {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.header-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+
+.header-sub {
+  font-size: 11px;
+  font-family: 'IBM Plex Mono', monospace;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-top: 1px;
+}
+
+/* ══════════════════════════════
+   PLACEHOLDER
+══════════════════════════════ */
+#placeholder {
+  padding: 48px 20px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+#placeholder .big {
+  font-size: 36px;
+  margin-bottom: 12px;
+  display: block;
+}
+
+#placeholder strong {
+  color: var(--accent);
+}
+
+/* ══════════════════════════════
+   RESULT WRAPPER
+══════════════════════════════ */
+#result {
+  display: none;
+  padding: 14px 12px 0;
+  animation: fadeUp 0.35s ease;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ══════════════════════════════
+   SCORE ROW
+══════════════════════════════ */
+.scores {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.score-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 12px 8px;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+.score-val {
+  font-size: 22px;
+  font-weight: 700;
+  font-family: 'IBM Plex Mono', monospace;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.score-val.purple { color: var(--accent); }
+.score-val.green  { color: var(--green); }
+.score-val.amber  { color: var(--amber); }
+.score-val.small  { font-size: 13px; padding-top: 5px; }
+
+.score-label {
+  font-size: 10px;
+  font-family: 'IBM Plex Mono', monospace;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* ══════════════════════════════
+   CARDS
+══════════════════════════════ */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 13px 14px;
+  margin-bottom: 8px;
+  box-shadow: var(--shadow);
+}
+
+/* Card Header */
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 9px;
+}
+
+.card-icon {
+  font-size: 14px;
+  line-height: 1;
+}
+
+.card-title {
+  font-size: 11px;
+  font-weight: 600;
+  font-family: 'IBM Plex Mono', monospace;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.card-badge {
+  margin-left: auto;
+  font-size: 10px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 500;
+  padding: 2px 8px;
+  border-radius: 99px;
+}
+
+.badge-gap {
+  background: var(--badge-gap-bg);
+  color: var(--badge-gap-text);
+}
+
+.badge-lim {
+  background: var(--badge-lim-bg);
+  color: var(--badge-lim-text);
+}
+
+/* ══════════════════════════════
+   METHODOLOGY BAR
+══════════════════════════════ */
+.method-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 7px;
+}
+
+.method-bar-wrap {
+  flex: 1;
+  height: 7px;
+  background: var(--border);
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.method-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #16a34a, #4ade80);
+  border-radius: 99px;
+  transition: width 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.method-score {
+  font-size: 13px;
+  font-weight: 600;
+  font-family: 'IBM Plex Mono', monospace;
+  color: var(--green);
+  min-width: 44px;
+  text-align: right;
+}
+
+/* ══════════════════════════════
+   BODY TEXT
+══════════════════════════════ */
+.sub-text {
+  font-size: 12px;
+  color: var(--text-sub);
+  line-height: 1.6;
+}
+
+/* ══════════════════════════════
+   RELIABILITY BADGE
+══════════════════════════════ */
+#relBadge {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 99px;
+  background: #f0fdf4;
+  color: var(--green);
+  border: 1px solid #bbf7d0;
+}
+
+/* ══════════════════════════════
+   LITERATURE VALUE
+══════════════════════════════ */
+#litVal {
+  margin-left: auto;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--amber);
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+/* ══════════════════════════════
+   RECOMMENDATION CARD VARIANTS
+══════════════════════════════ */
+.rec-accept {
+  border-left: 3px solid var(--green);
+  background: #f0fdf4;
+}
+
+.rec-reject {
+  border-left: 3px solid var(--red);
+  background: #fef2f2;
+}
+
+.rec-revise {
+  border-left: 3px solid var(--amber);
+  background: #fffbeb;
+}
+
+.rec-label {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 5px;
+  letter-spacing: -0.01em;
+}
+
+/* ══════════════════════════════
+   ITEM LISTS (Gaps & Limitations)
+══════════════════════════════ */
+.item-list {
+  list-style: none;
+}
+
+.item-list li {
+  display: flex;
+  gap: 9px;
+  font-size: 12px;
+  color: var(--text-sub);
+  line-height: 1.55;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.item-list li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.item-num {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--text-muted);
+  min-width: 18px;
+  padding-top: 2px;
+}
+
+/* ══════════════════════════════
+   PAPER SUMMARY
+══════════════════════════════ */
+.summary-label {
+  font-size: 10px;
+  font-family: 'IBM Plex Mono', monospace;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 6px;
+}
+
+.summary-text {
+  font-size: 12px;
+  color: var(--text);
+  line-height: 1.7;
+  background: #f8fafc;
+  border-radius: 7px;
+  padding: 10px 12px;
+  border-left: 3px solid var(--accent);
+  margin-top: 2px;
+}
+
+/* ══════════════════════════════
+   KEY CONTRIBUTIONS
+══════════════════════════════ */
+.badge-contrib {
+  background: #f0f9ff;
+  color: #0369a1;
+}
+
+.contrib-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 2px;
+}
+
+.contrib-item {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  background: #f8fafc;
+  border-radius: 7px;
+  padding: 8px 10px;
+}
+
+.contrib-num-pill {
+  min-width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #dbeafe;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--accent);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.contrib-text {
+  font-size: 12px;
+  color: var(--text);
+  line-height: 1.55;
+}
