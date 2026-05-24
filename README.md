@@ -62,3 +62,60 @@ research-gap-extension/
 ├── background/
 ├── content/
 └── storage/
+```
+
+# 🎯 Project Goal
+
+The goal of this project is to make research paper analysis:
+
+- Faster
+- Smarter
+- More Accessible
+- More Efficient
+
+for students, researchers, and academic professionals.
+
+---
+# ⚙️ How It Works
+
+1. User opens a research paper on a supported academic platform.
+
+2. The extension automatically extracts important sections such as:
+   - Abstract
+   - Conclusion
+   - Future Work
+
+3. The extracted content is sent to the AI model for analysis.
+
+4. The AI generates structured insights including:
+   - Paper Summary
+   - Key Contributions
+   - Research Gaps
+   - Limitations
+   - Evaluation Metrics
+
+5. The final results are displayed inside an interactive sidebar within the browser.
+
+---
+
+# 🔒 Security
+
+API keys should not be exposed publicly.  
+For production deployment, API requests should be handled through a secure backend service to protect sensitive credentials.
+
+---
+
+# 🚀 Future Improvements
+
+- Support for additional academic platforms
+- PDF file analysis
+- Citation analysis
+- Research paper comparison
+- Semantic search integration
+- AI-generated literature review
+
+---
+
+# 📜 License
+
+This project is developed for educational and research purposes.
